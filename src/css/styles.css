@@ -1,0 +1,84 @@
+body {
+  font-family: "Inter", sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+h2, .button {
+  color: #fff;
+}
+
+.flex {
+  display: flex;
+  gap: 10px;
+}
+
+.star {
+  font-size: 7rem;
+  cursor: pointer;
+}
+
+h2 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.grey { color: rgb(255 255 255 / 20%); }
+
+.yellow { color: rgb(203, 172, 49); }
+
+.button {
+  height: 44px;
+  width: 140px;
+  font-size: 1.5rem;
+  line-height: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  border-radius: 50px;
+  background-color: rgb(66 24 219);
+  border: 1px solid rgb(66 24 219);
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(66 24 219 / 90%);
+}
+
+.open-button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+}
+
+.close-button {
+  margin-bottom: 40px;
+}
+
+.dialog {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  height: auto;
+  width: 400px;
+  border-radius: 5px;
+  background-color: #f8f9fe;
+  animation: 0.25s linear anim;
+  top: 224px;
+}
+
+@keyframes anim {
+  from {
+    opacity: 0;
+    translate: 0 8px;
+  } to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+figure img {
+  height: 240px;
+  width: auto;
+}

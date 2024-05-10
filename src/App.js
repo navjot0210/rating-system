@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Dialog from './components/Dialog';
+import StarRating from './components/StarRating';
+import { useState } from 'react';
 
 function App() {
+  const [isDialogShown, setIsDialogShown] = useState(false);
+
+  const showDialog = () => {
+    setIsDialogShown(true);
+  };
+
+  const hideDialog = () => {
+    setIsDialogShown(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <section>
+        <StarRating />
+      </section>
+      {isDialogShown && <Dialog hideDialog={hideDialog} />}
+      <button className='button open-button' onClick={showDialog}>Open Dialog</button>
+    </main>
   );
 }
 
